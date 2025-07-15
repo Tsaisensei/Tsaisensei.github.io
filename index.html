@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>计算机社招新</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background: linear-gradient(-45deg, #1f1c2c, #928dab, #2b5876, #4e4376);
+      background-size: 400% 400%;
+      animation: gradient 15s ease infinite;
+      color: #fff;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    @keyframes gradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+      animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #00f0ff, 0 0 20px #00e0ff; }
+      to { text-shadow: 0 0 20px #ff00f7, 0 0 30px #ff00d4; }
+    }
+
+    p {
+      font-size: 1.2em;
+      line-height: 1.8em;
+      max-width: 700px;
+      margin: auto;
+      background: rgba(0,0,0,0.3);
+      padding: 20px;
+      border-radius: 10px;
+      backdrop-filter: blur(4px);
+      box-shadow: 0 0 20px rgba(255,255,255,0.1);
+    }
+
+    .cta-button {
+      display: inline-block;
+      margin-top: 40px;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      color: #fff;
+      background: linear-gradient(45deg, #00f0ff, #ff00f7);
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+      animation: pulse 2s infinite;
+      transition: transform 0.3s ease;
+    }
+
+    .cta-button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 20px #fff;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); }
+      50% { box-shadow: 0 0 20px rgba(255, 255, 255, 0.6); }
+      100% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); }
+    }
+  </style>
+</head>
+<body>
+  <h1>🔥 计算机社 招新啦！🔥</h1>
+  <p>
+    欢迎在 <strong>数模电</strong>（电路仿真、电路设计）、<strong>计算机编程</strong>、<strong>3D建模</strong>、<strong>嵌入式开发</strong> 等方面<br>
+    有兴趣的同学加入我们的社团！<br><br>
+    🎯 <strong>零基础</strong>也没关系！<br>
+    但建议掌握一点点 <strong>三角、复数、向量、微积分</strong> 基础，探索的世界会更广阔！<br>
+    只要你感兴趣，计算机社永远为你敞开大门！
+  </p>
+  <a href="join.html" class="cta-button">立即加入！</a>
+</body>
+</html>

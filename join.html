@@ -8,7 +8,71 @@
       font-family: sans-serif;
       background-color: #f4f4f4;
       text-align: center;
+    }<div class="form-container">
+  <h2>📝 立即报名加入我们</h2>
+  <p>请填写下方表单，计算机社期待你的加入！</p>
+  
+  <div class="form-frame">
+    <iframe src="https://forms.cloud.microsoft/r/2fnbtRfqZW"
+            frameborder="0" loading="lazy"></iframe>
+  </div>
+</div>
+
+<style>
+  .form-container {
+    text-align: center;
+    margin: 50px auto;
+    color: white;
+    max-width: 900px;
+    padding: 20px;
+    background: linear-gradient(145deg, #1e1e2f, #282845);
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  }
+
+  .form-container h2 {
+    font-size: 2em;
+    background: linear-gradient(to right, #4facfe, #00f2fe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+  }
+
+  .form-container p {
+    font-size: 1.1em;
+    color: #ddd;
+  }
+
+  .form-frame {
+    margin-top: 20px;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 2px solid #4facfe;
+    box-shadow: 0 0 15px rgba(0,255,255,0.4);
+  }
+
+  .form-frame iframe {
+    width: 100%;
+    height: 700px;
+    border: none;
+  }
+
+  @media (max-width: 768px) {
+    .form-container {
+      margin: 20px;
     }
+
+    .form-container h2 {
+      font-size: 1.5em;
+    }
+
+    .form-frame iframe {
+      height: 1000px; /* 移动端表单通常更高 */
+    }
+  }
+</style>
+
+
     iframe {
       border: none;
       margin-top: 20px;

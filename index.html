@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>计算机社招新</title>
   <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
       font-family: "Segoe UI", sans-serif;
       background: linear-gradient(-45deg, #1f1c2c, #928dab, #2b5876, #4e4376);
@@ -21,6 +23,51 @@
       100% { background-position: 0% 50%; }
     }
 
+    /* ===== 启动页样式 ===== */
+    #start-screen {
+      position: fixed;
+      z-index: 1000;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: #000;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: opacity 1s ease;
+    }
+
+    #start-screen h1 {
+      font-size: 3em;
+      color: #00ffcc;
+      text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffff;
+      margin-bottom: 30px;
+      animation: blink 2s infinite alternate;
+    }
+
+    #start-btn {
+      padding: 15px 30px;
+      font-size: 1.2em;
+      color: #00ffcc;
+      background: none;
+      border: 2px solid #00ffcc;
+      border-radius: 10px;
+      cursor: pointer;
+      text-shadow: 0 0 10px #00ffcc;
+      transition: all 0.3s ease;
+    }
+
+    #start-btn:hover {
+      background-color: #00ffcc;
+      color: #000;
+      box-shadow: 0 0 20px #00ffff;
+    }
+
+    @keyframes blink {
+      0% { opacity: 1; }
+      100% { opacity: 0.6; }
+    }
+
+    /* ===== 正文样式（保留你的原页面）===== */
     h1 {
       font-size: 3em;
       margin-bottom: 20px;
@@ -70,17 +117,58 @@
       50% { box-shadow: 0 0 20px rgba(255, 255, 255, 0.6); }
       100% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); }
     }
+
+    audio {
+      display: none;
+    }
   </style>
 </head>
 <body>
-  <h1>🔥 计算机社 招新啦！🔥</h1>
-  <p>
-    欢迎在 <strong>数模电</strong>（电路仿真、电路设计）、<strong>计算机编程</strong>、<strong>3D建模</strong>、<strong>嵌入式开发</strong> 等方面<br>
-    有兴趣的同学加入我们的社团！<br><br>
-    🎯 <strong>零基础</strong>也没关系！<br>
-    但建议掌握一点点 <strong>三角、复数、向量、微积分</strong> 基础，探索的世界会更广阔！<br>
-    只要你感兴趣，计算机社永远为你敞开大门！
-  </p>
-  <a href="join.html" class="cta-button">立即加入！</a>
+
+  <!-- 启动界面 -->
+  <div id="start-screen">
+    <h1>点击进入计算机社</h1>
+    <button id="start-btn">ENTER / 进入</button>
+  </div>
+
+  <!-- 正文界面 -->
+  <div id="main-content" style="display: none;">
+    <h1>🔥 计算机社 招新啦！🔥</h1>
+    <p>
+      欢迎在 <strong>数模电</strong>（电路仿真、电路设计）、<strong>计算机编程</strong>、<strong>3D建模</strong>、<strong>嵌入式开发</strong> 等方面<br>
+      有兴趣的同学加入我们的社团！<br><br>
+      🎯 <strong>零基础</strong>也没关系！<br>
+      但建议掌握一点点 <strong>三角、复数、向量、微积分</strong> 基础，探索的世界会更广阔！<br>
+      只要你感兴趣，计算机社永远为你敞开大门！
+    </p>
+    <a href="join.html" class="cta-button">立即加入！</a>
+  </div>
+
+  <!-- 背景音乐 -->
+  <audio id="bgm" loop>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- 控制播放 + 切换界面 -->
+  <script>
+    const startBtn = document.getElementById("start-btn");
+    const startScreen = document.getElementById("start-screen");
+    const mainContent = document.getElementById("main-content");
+    const bgm = document.getElementById("bgm");
+
+    startBtn.addEventListener("click", () => {
+      startScreen.style.opacity = 0;
+      setTimeout(() => {
+        startScreen.style.display = "none";
+        mainContent.style.display = "block";
+      }, 1000);
+
+      // 尝试播放音乐
+      bgm.play().catch(err => {
+        console.warn("无法自动播放音乐：", err);
+      });
+    });
+  </script>
+
 </body>
 </html>
